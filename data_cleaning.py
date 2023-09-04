@@ -30,3 +30,6 @@ df = df[df['salary_source'] == 'ESTIMATED']
 df['age'] = df.yearFounded.apply(lambda x: x if x <1 else 2023 - x)
 df = df[df['yearFounded'] != 0
         ]
+df.to_csv('data_clean_csv', index = False)
+
+pd.read_csv('data_clean_csv')
